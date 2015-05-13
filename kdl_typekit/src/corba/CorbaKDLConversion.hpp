@@ -12,7 +12,7 @@ namespace RTT
         typedef KDL::Corba::DoubleSequence CorbaType;
         typedef KDL::Vector StdType;
         static CorbaType toAny(const KDL::Vector& orig) {
-            log(Debug)<< "Converting type 'KDL::Vector' to sequence<CORBA::Double>." <<endlog();
+//            log(Debug)<< "Converting type 'KDL::Vector' to sequence<CORBA::Double>." <<endlog();
             CorbaType ret;
             ret.length( 3 );
 	    ret[0] = orig.x();
@@ -28,7 +28,7 @@ namespace RTT
 
       
         static bool update(const CORBA::Any& any, StdType& _value) {
-            log(Debug)<< "update KDL::Vector" <<endlog();
+//            log(Debug)<< "update KDL::Vector" <<endlog();
             CorbaType* result;
             if ( any >>=  result )  {
 	        return toStdType(_value,*result);
@@ -48,7 +48,7 @@ namespace RTT
       }
 
       static bool toStdType(StdType& tp, const CorbaType& cb){
-	log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Vector'" <<endlog();
+//	log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Vector'" <<endlog();
 	tp.x(cb[0]);
 	tp.y(cb[1]);
 	tp.z(cb[2]);
@@ -63,7 +63,7 @@ namespace RTT
         typedef KDL::Corba::DoubleSequence CorbaType;
         typedef KDL::Rotation StdType;
         static CorbaType toAny(const KDL::Rotation& orig) {
-            log(Debug)<< "Converting type 'KDL::Rotation' to sequence<CORBA::Double>." <<endlog();
+//            log(Debug)<< "Converting type 'KDL::Rotation' to sequence<CORBA::Double>." <<endlog();
             CorbaType ret;
             ret.length( 9 );
 	    ret[0] = orig(0,0);
@@ -79,7 +79,7 @@ namespace RTT
         }
 
       static bool toStdType(StdType& tp ,const CorbaType& cb) {
-            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Rotation'" <<endlog();
+//            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Rotation'" <<endlog();
 	    tp = StdType(cb[0],cb[1],cb[2],cb[3],cb[4],cb[5],cb[6],cb[7],cb[8]);
             return true;
         }
@@ -90,7 +90,7 @@ namespace RTT
       }
 
         static bool update(const CORBA::Any& any, StdType& _value) {
-            log(Debug)<< "update KDL::Rotation" <<endlog();
+//            log(Debug)<< "update KDL::Rotation" <<endlog();
             CorbaType* result;
             if ( any >>=  result )  {
 	        return toStdType(_value,*result);
@@ -117,7 +117,7 @@ namespace RTT
         typedef KDL::Corba::DoubleSequence CorbaType;
         typedef KDL::Frame StdType;
         static CorbaType toAny(const KDL::Frame& orig) {
-            log(Debug)<< "Converting type 'KDL::Frame' to sequence<CORBA::Double>." <<endlog();
+//            log(Debug)<< "Converting type 'KDL::Frame' to sequence<CORBA::Double>." <<endlog();
             CorbaType ret;
             ret.length( 12 );
 	    ret[0] = orig.p.x();
@@ -140,7 +140,7 @@ namespace RTT
             return true;
         }
         static bool update(const CORBA::Any& any, StdType& _value) {
-            log(Debug)<< "update KDL::Frame" <<endlog();
+//            log(Debug)<< "update KDL::Frame" <<endlog();
             CorbaType* result;
             if ( any >>=  result )  {
 	        return toStdType(_value,*result);
@@ -155,7 +155,7 @@ namespace RTT
         }
 
         static bool toStdType(StdType& tp, const CorbaType& cb) {
-            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Frame'" <<endlog();
+//            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Frame'" <<endlog();
 	    tp.p.x(cb[0]);
 	    tp.p.y(cb[1]);
 	    tp.p.z(cb[2]);
@@ -184,7 +184,7 @@ namespace RTT
         typedef KDL::Corba::DoubleSequence CorbaType;
         typedef KDL::Wrench StdType;
         static CorbaType toAny(const KDL::Wrench& orig) {
-            log(Debug)<< "Converting type 'KDL::Wrench' to sequence<CORBA::Double>." <<endlog();
+//            log(Debug)<< "Converting type 'KDL::Wrench' to sequence<CORBA::Double>." <<endlog();
             CorbaType ret;
             ret.length( 6 );
 	    ret[0] = orig.force.x();
@@ -203,7 +203,7 @@ namespace RTT
 
       
         static bool update(const CORBA::Any& any, StdType& _value) {
-            log(Debug)<< "update KDL::Vector" <<endlog();
+//            log(Debug)<< "update KDL::Vector" <<endlog();
             CorbaType* result;
             if ( any >>=  result )  {
 	        return toStdType(_value,*result);
@@ -218,7 +218,7 @@ namespace RTT
         }
 
       static bool toStdType(StdType& tp, const CorbaType& cb){
-            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Wrench'" <<endlog();
+//            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Wrench'" <<endlog();
 	    tp.force.x(cb[0]);
 	    tp.force.y(cb[1]);
 	    tp.force.z(cb[2]);
@@ -240,7 +240,7 @@ namespace RTT
         typedef KDL::Corba::DoubleSequence CorbaType;
         typedef KDL::Twist StdType;
         static CorbaType toAny(const KDL::Twist& orig) {
-            log(Debug)<< "Converting type 'KDL::Twist' to sequence<CORBA::Double>." <<endlog();
+//            log(Debug)<< "Converting type 'KDL::Twist' to sequence<CORBA::Double>." <<endlog();
             CorbaType ret;
             ret.length( 6 );
 	    ret[0] = orig.vel.x();
@@ -259,7 +259,7 @@ namespace RTT
 
       
         static bool update(const CORBA::Any& any, StdType& _value) {
-            log(Debug)<< "update KDL::Vector" <<endlog();
+//            log(Debug)<< "update KDL::Vector" <<endlog();
             CorbaType* result;
             if ( any >>=  result )  {
 	        return toStdType(_value,*result);
@@ -279,7 +279,7 @@ namespace RTT
       }
 
       static bool toStdType(StdType& tp, const CorbaType& cb){
-            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Twist'" <<endlog();
+//            log(Debug)<< "Converting type sequence<CORBA::Double> to 'KDL::Twist'" <<endlog();
 	    tp.vel.x(cb[0]);
 	    tp.vel.y(cb[1]);
 	    tp.vel.z(cb[2]);
